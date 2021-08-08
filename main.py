@@ -37,9 +37,9 @@ stock_response = requests.get(url=STOCK_ENDPOINT, params=stock_parameters)
 data = stock_response.json()["Time Series Crypto (60min)"]
 data_list = [value for (key,value) in data.items()][:8]
 print(data)
-'''Closing Price Yesterday'''
+
 closing_price_last = data_list[-1]["4. close"]
-'''Closing Price Day before Yesterday'''
+
 closing_price_now = data_list[0]["4. close"]
 '''Difference'''
 difference = float(closing_price_last) - float(closing_price_now)
